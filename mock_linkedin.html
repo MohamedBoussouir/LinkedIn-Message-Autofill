@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>LinkedIn Messaging Mock Test</title>
+  <style>
+    body {
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #f3f2ef;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+    .mock-container {
+      width: 480px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border: 1px solid #dcdcdc;
+      overflow: hidden;
+    }
+    .msg-overlay-bubble-header {
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 12px 16px;
+    }
+    .msg-overlay-bubble-header__title {
+      font-size: 15px;
+      font-weight: 600;
+      color: rgba(0,0,0,0.9);
+      margin: 0;
+    }
+    .msg-entity-lockup__entity-info {
+      font-size: 12px;
+      color: rgba(0,0,0,0.6);
+      margin-top: 4px;
+    }
+    .switch-profiles {
+      background: #fafafa;
+      padding: 10px 16px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      gap: 8px;
+    }
+    .switch-profiles button {
+      font-size: 11px;
+      padding: 4px 8px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fff;
+    }
+    .msg-conversation-body {
+      height: 220px;
+      padding: 16px;
+      background: #fafafa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 13px;
+    }
+    .msg-form {
+      border-top: 1px solid #e0e0e0;
+      padding: 12px;
+      background: #fff;
+    }
+    .msg-form__contenteditable {
+      min-height: 80px;
+      border: 1px solid #0a66c2;
+      border-radius: 6px;
+      padding: 8px 12px;
+      outline: none;
+      font-size: 13px;
+      line-height: 1.5;
+      background: #fff;
+    }
+    .msg-form__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+    }
+    .send-btn {
+      background: #0a66c2;
+      color: #fff;
+      border: none;
+      padding: 6px 16px;
+      border-radius: 16px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mock-container msg-overlay-conversation-bubble">
+    <!-- قائمة لتجربة بروفايلات مختلفة بضغطة زر -->
+    <div class="switch-profiles">
+      <span style="font-size: 12px; align-self: center;">جرّب بروفايل:</span>
+      <button onclick="setProfile('Hasnaa Mouden', 'Chargée de Recrutement IT chez Novancy One | Talent Acquisition')">1. مسؤولة توظيف (RH)</button>
+      <button onclick="setProfile('Yassine Alami', 'Lead Tech Full Stack | Senior Node.js & React Architect chez Capgemini')">2. مطور Lead Dev (توصية)</button>
+    </div>
+
+    <!-- رأس المحادثة الذي يقرأ منه السكريبت الاسم والمسمى -->
+    <div class="msg-overlay-bubble-header">
+      <h3 class="msg-overlay-bubble-header__title" id="profile-name">Hasnaa Mouden</h3>
+      <div class="msg-entity-lockup__entity-info" id="profile-headline">Chargée de Recrutement IT chez Novancy One | Talent Acquisition</div>
+    </div>
+
+    <!-- مساحة المحادثة -->
+    <div class="msg-conversation-body">
+      مساحة الرسائل السابقة...
+    </div>
+
+    <!-- صندوق الإدخال (نفس بنية لينكد إن) -->
+    <div class="msg-form">
+      <div class="msg-form__contenteditable" contenteditable="true" role="textbox" aria-label="Écrivez un message..."></div>
+      <div class="msg-form__footer">
+        <div class="msg-form__left-actions"></div>
+        <button class="send-btn" type="button">Envoyer</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setProfile(name, headline) {
+      document.getElementById('profile-name').innerText = name;
+      document.getElementById('profile-headline').innerText = headline;
+    }
+  </script>
+</body>
+</html>
