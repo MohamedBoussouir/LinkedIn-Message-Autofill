@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <style>
-    body { font-family: sans-serif; width: 280px; padding: 14px; margin: 0; }
-    input { width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box; }
-    button { width: 100%; padding: 8px; background: #0a66c2; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
-    #status { font-size: 12px; color: green; margin-top: 6px; text-align: center; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; width: 290px; padding: 16px; margin: 0; }
+    h4 { margin: 0 0 10px; color: #f55036; font-size: 16px; }
+    label { font-size: 12px; color: #555; display: block; margin-bottom: 4px; }
+    input { width: 100%; padding: 8px 10px; margin-bottom: 12px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 6px; font-family: monospace; font-size: 12px; }
+    button { width: 100%; padding: 9px; background: #f55036; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+    button:hover { background: #d93d25; }
+    #status { font-size: 12px; color: #057642; margin-top: 8px; text-align: center; height: 16px; }
   </style>
 </head>
 <body>
-  <h4>إعدادات Grok AI</h4>
-  <label for="apiKey">مفتاح Grok API Key:</label>
-  <input type="password" id="apiKey" placeholder="xai-...">
+  <h4>⚡ إعدادات Groq AI</h4>
+  <label for="apiKey">مفتاح Groq API Key:</label>
+  <input type="password" id="apiKey" placeholder="gsk_...">
   <button id="saveBtn">حفظ المفتاح</button>
   <div id="status"></div>
   <script src="popup.js"></script>
